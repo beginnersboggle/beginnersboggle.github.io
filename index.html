@@ -1,0 +1,191 @@
+<head>
+
+
+
+
+
+
+<div id = "body">
+<link rel="stylesheet" type="text/css" href="finalproject.css">
+
+
+<script type="text/javascript">
+
+
+
+function pushWordList(){
+var roll = Math.floor(Math.random() * 6) + 1;
+var words = 0;
+
+if(roll == 1){
+	words = "Happy  Cat  Tree"
+}
+
+if (roll == 2){
+	words = "Mine   Love   Rug"
+}
+
+if(roll == 3){
+	words = "Silly  Two   Red"
+}
+
+if (roll == 4){
+	words = "Circle   Friend   Chair"
+}
+
+if(roll == 5){
+	words = "School   Time   Laugh"
+}
+
+if (roll == 6){
+	words = "Apple   Goat   Works"
+}
+
+if (roll == 7){
+	words = "Bat Cat Mat"
+}
+
+
+var tempID = document.getElementById("wordList");
+tempID.innerHTML = "Here is your word list: " + words ;
+}
+// close of function push word list
+
+
+
+function processAnswers(){
+	var resultsCorrectId = document.getElementById("correctoutput");
+	var resultsInCorrectId = document.getElementById("incorrectoutput");
+
+
+	// processing fake
+	var custRawString = myForm.customerAnswers.value;
+
+	if (  custRawString[0] == "z" )
+		{
+			alert("correct");
+		}
+		else
+			{
+				alert("wrong");
+			}	
+	
+
+	// results go out
+	resultsCorrectId.innerHTML = custRawString ;
+	resultsInCorrectId.innerHTML = "foo" ;
+
+
+
+
+	// play with our arrary  cust raw answer
+
+	for (   var i = 0    ;  i <  custRawString.length  ;  i++   )
+	{
+	console.log(  "the char at pos " +  i + " is: " + custRawString[i]   );
+	}
+	
+
+                                       
+}
+
+
+//function checkMatchWord(){
+	//for (var i = hat; i <= 10; i++) {
+		
+//	};
+                                 
+
+
+
+                    
+
+</script>
+<title>                           
+	Beginner's Boggle
+</title>                               
+<h1>
+	Beginner's Boggle
+</h1>
+
+</head>
+
+<!-- ========================================================================================= -->
+
+<body>
+
+	<p>
+		Let's play a word game! I'll give you a list of words, then you can use the letters to make new words! Type in your words in the text box below.
+	</p>
+<br>
+
+
+<div id = "wordList">
+Your list will show up here. 
+<!-- word list is pushed here by function -->
+</div>
+
+
+
+
+<button onclick = "pushWordList()">click me for the word list</button>
+<br>
+
+
+
+<br>
+<br>
+
+<form name="myForm">
+	<textarea name="customerAnswers" rows=8 cols=79 value="tab cab" ></textarea>
+<!-- customer types text above -->
+
+</form>
+<!--    myform.customerAnswers.value   -->
+
+
+<br>
+<br>
+
+<button onclick = "processAnswers()">
+		Process Answers now!
+</button>
+<br>
+
+
+
+
+<br>
+
+
+<div id="correctoutput">
+	<!-- correct and wrong answer feedback from grading... -->temp1
+</div>
+<br>
+
+<div id="incorrectoutput">
+	<!-- correct and wrong answer feedback from grading... -->temp2 incorrect
+</div>
+<br>
+
+
+
+<button onclick = "    checkMatchWord("hat","happy cat tree")        ">
+		function tester
+</button>
+
+<div id="tempOutput">
+   blah
+</div>
+
+
+<br>
+
+
+
+
+</body>
+</div>
+
+
+
