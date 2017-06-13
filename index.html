@@ -47,7 +47,7 @@ if (roll == 7){
 
 
 var tempID = document.getElementById("wordList");
-tempID.innerHTML = "Here is your word list: " + words ;
+tempID.innerHTML = words ;
 }
 // close of function push word list
 
@@ -57,23 +57,38 @@ function processAnswers(){
 	var resultsCorrectId = document.getElementById("correctoutput");
 	var resultsInCorrectId = document.getElementById("incorrectoutput");
 
+	var fetchedWordList = "";
+	var tempId = document.getElementById("wordList");
+	fetchedWordList = tempId.innerHTML; 
+	// alert("word list is ..." + fetchedWordList);
+	// alert("first letter is ..." + fetchedWordList[0]);
+
+
 
 	// processing fake
 	var custRawString = myForm.customerAnswers.value;
+	// pull data out of form
 
-	if (  custRawString[0] == "z" )
+	custRawString  =  custRawString.toLowerCase();
+	fetchedWordList = fetchedWordList.toLowerCase();
+	// convert both word list and customer answers to lowercase...
+
+	var gameResults  = "";
+
+
+	if (  custRawString[0] == fetchedWordList[0] )
 		{
-			alert("correct");
+			gameResults = "first letter correct";
 		}
 		else
 			{
-				alert("wrong");
+				gameResults = "wrong, you can't even see one letter?  ohhh";
 			}	
 	
 
 	// results go out
-	resultsCorrectId.innerHTML = custRawString ;
-	resultsInCorrectId.innerHTML = "foo" ;
+	resultsCorrectId.innerHTML = gameResults ;
+	resultsInCorrectId.innerHTML = gameResults ;
 
 
 
@@ -115,8 +130,8 @@ function processAnswers(){
 <br>
 
 
+Your list will show up below.... <br>
 <div id = "wordList">
-Your list will show up here. 
 <!-- word list is pushed here by function -->
 </div>
 
